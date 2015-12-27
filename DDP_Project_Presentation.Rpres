@@ -1,42 +1,100 @@
 Developing Data Products Presentation
 ========================================================
 author: Eduardo Gaspar
-date: 27/12/2015
+date: `r format( date(), format = "%B %d %Y" )`
 
-First Slide
+Online Analysis Tool
 ========================================================
 
-For more details on authoring R presentations click the
-**Help** button on the toolbar.
+This ShinyApp is a prototype to be used in a undergrad class helping students do their class exercises.  
+The idea is that the students can load their datasets and run online tests and this will be a long term project, right now it's only a glimpse.  
 
-- Bullet 1
-- Bullet 2
-- Bullet 3
+It was implemented two things:
 
-2 Slide With Code
-========================================================
+- a factorial analysis with fixed parameters
+- a hierarchical cluster also with fixed parameters.
 
-```{r}
-summary(cars)
+Dendrogram Code
+===
+```{r, echo = FALSE}
+library(downloader)
+library(xlsx)
+library(utils)
+
+url = "http://fsi.fundforpeace.org/library/fragilestatesindex-2015.xlsx" 
+file="fragilestatesindex-2015.xlsx"
+download( url, file,mode = "wb" )
+data = read.xlsx( file, header = TRUE,
+                  startRow = 1,
+                  sheetIndex = 1 )
+
+dados = data[ complete.cases( data ), ]
+rankingffp = dados[ , 1 ]
+paises = dados[ , 2 ]
+X = dados[ , 4:15 ]
+rownames( X ) = paises
+corx = round( cor( X ), 4 )
+output = factanal( X, factors = 2,method = "mle", scores = "regression" )
+matrizL = round( output$loadings, 4 )
+score = output$scores
+dendrograma = hclust( dist( score ), method = "ward.D2" )
+classe = cutree( dendrograma,k = 4)
+
+cluster1 <- which(classe == 1 )
+cluster2 <- which(classe == 2 )
+cluster3 <- which(classe == 3 )
+cluster4 <- which(classe == 4 )
 ```
 
-3 Slide With Plot
-========================================================
+```{r, eval=FALSE }
 
-```{r, echo=FALSE}
-plot(cars)
+dat <- factanal( data1(),
+             factors = input$factors,
+             method = "mle",
+             scores = input$scores )
+
+score <- dat$scores
+
+dendrogram = hclust( dist( score ),
+                 method = "ward.D2" )
+classe <<- cutree( dendrogram,
+              k = input$ncluster )
+
+rect.hclust( dendrogram,
+         k = input$ncluster,
+         border = "green" )
+
 ```
 
-4 Slide With Plot
-========================================================
+Data Summary
+===
+<small>
+```{r }
 
-```{r, echo=FALSE}
-plot(cars)
+summary( data )
+
+```
+</small>
+
+Dendrogram Plot with 4 Clusters
+===
+
+```{r, echo = FALSE}
+plot( dendrograma , hang = -1 )
+title( expression( "Dendrograma (Metodo Ward)" ), line = 1 )
+mtext( "Bairros distribuidos por clusters",
+       side = 1, line = 2, col = "blue", cex = 1 )
+mtext( "distancia", side = 2, line = 2, col = "black", cex = 1 )
+rect.hclust( dendrograma, k = 4, border = "green" )
 ```
 
-5 Slide With Plot
-========================================================
+Boxplot with 4 Clusters
+===
 
 ```{r, echo=FALSE}
-plot(cars)
+boxplot( cluster1,
+         cluster2,
+         cluster3,
+         cluster4,
+         col = c( "red", "green", "blue", "yellow" ) )
 ```

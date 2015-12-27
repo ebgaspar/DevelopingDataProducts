@@ -1,6 +1,6 @@
 library(shiny)
 library(rCharts)
- require(markdown)
+require(markdown)
 library(markdown)
 
 shinyUI(navbarPage("My Application",
@@ -25,8 +25,8 @@ shinyUI(navbarPage("My Application",
                               tabPanel( "Summary",
                                         tableOutput( "summary")
                                         ),
-                               tabPanel("Correlation",
-                                        tableOutput("correlation")
+                               tabPanel( "Correlation",
+                                         tableOutput( "correlation" )
                                         )
                             ), # Close NavBarMenu
                     tabPanel( "Plots",
