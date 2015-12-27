@@ -1,0 +1,42 @@
+Developing Data Products Presentation
+========================================================
+author: Eduardo Gaspar
+date: 27/12/2015
+
+First Slide
+========================================================
+
+For more details on authoring R presentations click the
+**Help** button on the toolbar.
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+2 Slide With Code
+========================================================
+
+```{r}
+summary(cars)
+```
+
+3 Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+4 Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```
+
+5 Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+plot(cars)
+```

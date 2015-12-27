@@ -1,11 +1,6 @@
 library(shiny)
-# library(BH)
 library(rCharts)
  require(markdown)
-# require(data.table)
-# library(dplyr)
-# library(DT)
-
 library(markdown)
 
 shinyUI(navbarPage("My Application",
@@ -25,7 +20,7 @@ shinyUI(navbarPage("My Application",
                                     dataTableOutput( "contents" )
                                     )
                                 )
-                            ),
+                            ), #CLose TabPanel
                     navbarMenu("Stats",
                               tabPanel( "Summary",
                                         tableOutput( "summary")
