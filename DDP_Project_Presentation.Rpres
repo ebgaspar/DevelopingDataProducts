@@ -2,6 +2,7 @@ Developing Data Products Presentation
 ========================================================
 author: Eduardo Gaspar
 date: `r format( date(), format = "%B %d %Y" )`
+autosize: true
 
 Online Analysis Tool
 ========================================================
@@ -39,7 +40,7 @@ matrizL = round( output$loadings, 4 )
 score = output$scores
 dendrograma = hclust( dist( score ), method = "ward.D2" )
 classe = cutree( dendrograma,k = 4)
-
+data <- X
 cluster1 <- which(classe == 1 )
 cluster2 <- which(classe == 2 )
 cluster3 <- which(classe == 3 )
@@ -70,9 +71,7 @@ Data Summary
 ===
 <small>
 ```{r }
-
 summary( data )
-
 ```
 </small>
 
@@ -90,11 +89,7 @@ rect.hclust( dendrograma, k = 4, border = "green" )
 
 Boxplot with 4 Clusters
 ===
-
-```{r, echo=FALSE}
-boxplot( cluster1,
-         cluster2,
-         cluster3,
-         cluster4,
-         col = c( "red", "green", "blue", "yellow" ) )
+```{r }
+boxplot(cluster1,cluster2,cluster3,cluster4,
+ col = c("red", "green", "blue", "yellow"))
 ```

@@ -749,7 +749,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="linear" data-transition-speed="default">
-<h1>Developing Data Products Presentation</h1><p>Eduardo Gaspar<br/>Sun Dec 27 14:40:14 2015</p>
+<h1>Developing Data Products Presentation</h1><p>Eduardo Gaspar<br/>Sun Dec 27 15:11:05 2015</p>
 
 <div class="slideContent" >
 
@@ -803,22 +803,13 @@ rect.hclust( dendrogram,
 <pre><code class="r">summary( data )
 </code></pre>
 
-<pre><code>      NA.               Fragile.States.Index.2015     Total       
- Min.   :  1.00   Afghanistan        :  1         Min.   : 17.80  
- 1st Qu.: 45.00   Albania            :  1         1st Qu.: 53.00  
- Median : 89.50   Algeria            :  1         Median : 74.55  
- Mean   : 89.42   Angola             :  1         Mean   : 70.20  
- 3rd Qu.:133.50   Antigua and Barbuda:  1         3rd Qu.: 86.90  
- Max.   :178.00   (Other)            :173         Max.   :114.50  
- NA&#39;s   :1        NA&#39;s               :  1         NA&#39;s   :1       
- Demographic.Pressures Refugees.and.IDPs Group.Grievance   Human.Flight  
+<pre><code> Demographic.Pressures Refugees.and.IDPs Group.Grievance   Human.Flight  
  Min.   :1.500         Min.   : 1.100    Min.   : 1.300   Min.   :1.000  
  1st Qu.:4.100         1st Qu.: 2.925    1st Qu.: 4.500   1st Qu.:3.850  
  Median :5.900         Median : 4.700    Median : 6.300   Median :5.800  
  Mean   :5.952         Mean   : 5.045    Mean   : 6.180   Mean   :5.525  
  3rd Qu.:8.000         3rd Qu.: 7.250    3rd Qu.: 7.775   3rd Qu.:7.175  
  Max.   :9.800         Max.   :10.000    Max.   :10.000   Max.   :9.300  
- NA&#39;s   :1             NA&#39;s   :1         NA&#39;s   :1        NA&#39;s   :1      
  Uneven.Development Poverty.and.Economic.Decline Legitimacy.of.the.State
  Min.   :1.000      Min.   :1.500                Min.   : 0.400         
  1st Qu.:4.825      1st Qu.:4.500                1st Qu.: 4.725         
@@ -826,7 +817,6 @@ rect.hclust( dendrogram,
  Mean   :6.122      Mean   :5.790                Mean   : 6.184         
  3rd Qu.:7.675      3rd Qu.:7.075                3rd Qu.: 8.100         
  Max.   :9.700      Max.   :9.300                Max.   :10.000         
- NA&#39;s   :1          NA&#39;s   :1                    NA&#39;s   :1              
  Public.Services   Human.Rights    Security.Apparatus Factionalized.Elites
  Min.   : 1.200   Min.   : 0.900   Min.   : 1.000     Min.   : 1.000      
  1st Qu.: 3.725   1st Qu.: 3.900   1st Qu.: 4.000     1st Qu.: 4.425      
@@ -834,7 +824,6 @@ rect.hclust( dendrogram,
  Mean   : 5.661   Mean   : 5.802   Mean   : 5.754     Mean   : 6.365      
  3rd Qu.: 7.800   3rd Qu.: 7.700   3rd Qu.: 7.400     3rd Qu.: 8.175      
  Max.   :10.000   Max.   :10.000   Max.   :10.000     Max.   :10.000      
- NA&#39;s   :1        NA&#39;s   :1        NA&#39;s   :1          NA&#39;s   :1           
  External.Intervention
  Min.   : 1.000       
  1st Qu.: 4.100       
@@ -842,7 +831,6 @@ rect.hclust( dendrogram,
  Mean   : 5.824       
  3rd Qu.: 7.600       
  Max.   :10.000       
- NA&#39;s   :1            
 </code></pre>
 
 <p></small></p>
@@ -860,7 +848,11 @@ rect.hclust( dendrogram,
 </section>
 <section data-transition="linear" data-transition-speed="default">
 <h3>Boxplot with 4 Clusters</h3>
-<div class="mediaOnly slideContent" >
+<div class="mediaInline slideContent" >
+<pre><code class="r">boxplot(cluster1,cluster2,cluster3,cluster4,
+ col = c(&quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, &quot;yellow&quot;))
+</code></pre>
+
 <p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-5"/> </p>
 
 </div>

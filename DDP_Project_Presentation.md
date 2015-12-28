@@ -1,7 +1,8 @@
 Developing Data Products Presentation
 ========================================================
 author: Eduardo Gaspar
-date: Sun Dec 27 14:40:14 2015
+date: Sun Dec 27 15:11:05 2015
+autosize: true
 
 Online Analysis Tool
 ========================================================
@@ -46,14 +47,6 @@ summary( data )
 ```
 
 ```
-      NA.               Fragile.States.Index.2015     Total       
- Min.   :  1.00   Afghanistan        :  1         Min.   : 17.80  
- 1st Qu.: 45.00   Albania            :  1         1st Qu.: 53.00  
- Median : 89.50   Algeria            :  1         Median : 74.55  
- Mean   : 89.42   Angola             :  1         Mean   : 70.20  
- 3rd Qu.:133.50   Antigua and Barbuda:  1         3rd Qu.: 86.90  
- Max.   :178.00   (Other)            :173         Max.   :114.50  
- NA's   :1        NA's               :  1         NA's   :1       
  Demographic.Pressures Refugees.and.IDPs Group.Grievance   Human.Flight  
  Min.   :1.500         Min.   : 1.100    Min.   : 1.300   Min.   :1.000  
  1st Qu.:4.100         1st Qu.: 2.925    1st Qu.: 4.500   1st Qu.:3.850  
@@ -61,7 +54,6 @@ summary( data )
  Mean   :5.952         Mean   : 5.045    Mean   : 6.180   Mean   :5.525  
  3rd Qu.:8.000         3rd Qu.: 7.250    3rd Qu.: 7.775   3rd Qu.:7.175  
  Max.   :9.800         Max.   :10.000    Max.   :10.000   Max.   :9.300  
- NA's   :1             NA's   :1         NA's   :1        NA's   :1      
  Uneven.Development Poverty.and.Economic.Decline Legitimacy.of.the.State
  Min.   :1.000      Min.   :1.500                Min.   : 0.400         
  1st Qu.:4.825      1st Qu.:4.500                1st Qu.: 4.725         
@@ -69,7 +61,6 @@ summary( data )
  Mean   :6.122      Mean   :5.790                Mean   : 6.184         
  3rd Qu.:7.675      3rd Qu.:7.075                3rd Qu.: 8.100         
  Max.   :9.700      Max.   :9.300                Max.   :10.000         
- NA's   :1          NA's   :1                    NA's   :1              
  Public.Services   Human.Rights    Security.Apparatus Factionalized.Elites
  Min.   : 1.200   Min.   : 0.900   Min.   : 1.000     Min.   : 1.000      
  1st Qu.: 3.725   1st Qu.: 3.900   1st Qu.: 4.000     1st Qu.: 4.425      
@@ -77,7 +68,6 @@ summary( data )
  Mean   : 5.661   Mean   : 5.802   Mean   : 5.754     Mean   : 6.365      
  3rd Qu.: 7.800   3rd Qu.: 7.700   3rd Qu.: 7.400     3rd Qu.: 8.175      
  Max.   :10.000   Max.   :10.000   Max.   :10.000     Max.   :10.000      
- NA's   :1        NA's   :1        NA's   :1          NA's   :1           
  External.Intervention
  Min.   : 1.000       
  1st Qu.: 4.100       
@@ -85,7 +75,6 @@ summary( data )
  Mean   : 5.824       
  3rd Qu.: 7.600       
  Max.   :10.000       
- NA's   :1            
 ```
 </small>
 
@@ -96,5 +85,10 @@ Dendrogram Plot with 4 Clusters
 
 Boxplot with 4 Clusters
 ===
+
+```r
+boxplot(cluster1,cluster2,cluster3,cluster4,
+ col = c("red", "green", "blue", "yellow"))
+```
 
 ![plot of chunk unnamed-chunk-5](DDP_Project_Presentation-figure/unnamed-chunk-5-1.png) 
