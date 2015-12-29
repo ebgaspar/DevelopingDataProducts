@@ -1,9 +1,7 @@
 library(shiny)
-library(rCharts)
 require(markdown)
-library(markdown)
 
-shinyUI(navbarPage("My Application",
+shinyUI(navbarPage("Numerical Data Analysis",
                    tabPanel("Load Dataset",
                             sidebarLayout(
                                 sidebarPanel(
@@ -12,7 +10,7 @@ shinyUI(navbarPage("My Application",
                                                accept = c( 'text/csv', 'text/comma-separated-values,text/plain', '.csv' ) ),
                                     tags$hr(),
                                     checkboxInput( 'header', 'Header', T ),
-                                    checkboxInput( 'rownames', 'Row Names', T ),
+                                    # checkboxInput( 'rownames', 'Row Names', T ),
                                     radioButtons( 'sep', 'Separator', c( Comma = ',', Semicolon=';', Tab='\t' ), ','),
                                     radioButtons('quote', 'Quote', c(None = '', 'Double Quote'='"', 'Single Quote'="'"), '"' )
                                 ),

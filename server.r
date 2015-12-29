@@ -15,8 +15,8 @@ shinyServer(
             dat <- read.csv( inFile$datapath,
                              header = input$header,
                              sep = input$sep,
-                             quote = input$quote,
-                             row.names = as.integer( input$rownames ) )
+                             quote = input$quote )#,
+                             # row.names = as.integer( input$rownames ) )
             
         })
         
